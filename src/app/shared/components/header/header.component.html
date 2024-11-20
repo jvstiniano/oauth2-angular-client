@@ -1,0 +1,20 @@
+<nav class="nav-container" [class.mobile-open]="isMobileMenuOpen">
+    <div class="nav-brand">
+      <a routerLink="/">Mi App</a>
+      <button class="mobile-toggle" (click)="toggleMobileMenu()">
+        <span></span>
+      </button>
+      <ul class="nav-items" [class.show]="isMobileMenuOpen">
+        <li>
+          <a routerLink="/home" routerLinkActive="active">Home</a>
+        </li>
+        <li *ngIf="!authService.isAuthenticated()">
+          <button class="login-button" (click)="login()" >Login</button>
+        </li>
+        <li *ngIf="authService.isAuthenticated()">
+          <span class="user-name"> {{authService.userLogin.username}}</span>
+          <button class="logout-button" (click)="logout()">Logout</button>
+        </li>
+      </ul>
+    </div>
+</nav>
