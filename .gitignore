@@ -42,4 +42,4 @@ testem.log
 Thumbs.db
 
 # Custom
-/src/app/environment/*
+#/src/app/environment/*
